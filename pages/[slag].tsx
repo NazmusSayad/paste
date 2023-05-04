@@ -1,8 +1,8 @@
+import ShowPaste from '../src/components/ShowPaste'
 import Paste from '../src/model/Paste'
 
 export default function ({ paste, message }) {
-  console.log(paste, message)
-  return <div>{paste?.text}</div>
+  return <ShowPaste paste={paste} />
 }
 
 export async function getServerSideProps(req) {

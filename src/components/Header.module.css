@@ -1,0 +1,13 @@
+.Header {
+  background: red;
+  padding-block: 0.65rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+}
