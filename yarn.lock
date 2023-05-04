@@ -120,6 +120,11 @@ caniuse-lite@^1.0.30001406:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001482.tgz#8b3fad73dc35b2674a5c96df2d4f9f1c561435de"
   integrity sha512-F1ZInsg53cegyjroxLNW9DmrEQ1SuGRTO1QlpA0o2/6OpQ0gFeDRoq1yFmnr8Sakn9qwwt9DmbxHB6w167OSuQ==
 
+class-function@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/class-function/-/class-function-1.0.1.tgz#93042f5bb24b83eb479e06f7c3a1a03d5321ff71"
+  integrity sha512-cpgHTOG3jRQzg3y9EyR1jnQGkGc2UiZRmkWs7Vs3ObGveQqSdDLK38zmFHsN6jY+J71+R7/wEDnTjrh4BuQeeA==
+
 client-only@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/client-only/-/client-only-0.0.1.tgz#38bba5d403c41ab150bff64a95c85013cf73bca1"
@@ -141,6 +146,13 @@ debug@4.x:
   integrity sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==
   dependencies:
     ms "2.1.2"
+
+get-classnames@^1.0.4:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/get-classnames/-/get-classnames-1.0.8.tgz#ada0dc4fbf4fca1d7673fc6d7d1180ac31ee95b4"
+  integrity sha512-ECIkbyDO5iVC0NPbCVnjDMwxq/oV14Cmo0kTQRbaUS0az6jXBEjJCtECX5+g+J9xttidRxSs6wtYJCJXYmGD2w==
+  dependencies:
+    class-function "^1.0.1"
 
 ip@^2.0.0:
   version "2.0.0"

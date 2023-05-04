@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import connectDB from '../connectDB'
 
 const schema = new mongoose.Schema(
   {
@@ -19,4 +20,5 @@ const schema = new mongoose.Schema(
   }
 )
 
+connectDB()
 export default mongoose.models.paste || mongoose.model('paste', schema)
