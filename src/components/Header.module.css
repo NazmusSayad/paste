@@ -9,5 +9,9 @@
   align-items: center;
 }
 
+.controls {
+  display: flex;
+}
+
 .button {
 }
