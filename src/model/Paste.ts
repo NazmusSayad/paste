@@ -1,24 +1,19 @@
-import mongoose from 'mongoose'
-import connectDB from '../connectDB'
+import { Sequelize, DataTypes } from 'sequelize'
+const sequelize = new Sequelize(process.env.DB as any)
 
-const schema = new mongoose.Schema(
-  {
-    text: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-
-    createdAt: {
-      type: Date,
-      required: true,
-      default: Date.now,
-    },
+const schema = {
+  _id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
   },
-  {
-    versionKey: false,
-  }
-)
 
-connectDB()
-export default mongoose.models.paste || mongoose.model('paste', schema)
+  text: {
+    type: DataTypes.TEXT,
+    allowNull: false,
+  },
+}
+
+const model = sequelize.define('paste', schema)
+sequelize.sync()
+export default model
