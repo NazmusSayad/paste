@@ -1,41 +1,47 @@
 import Wrapper from '../layout/Wrapper'
 import SavePaste from '../components/SavePaste'
-import css from './Header.module.css'
+import css from './Header.module.scss'
 import { useRouter } from 'next/router'
-import { inter } from '../fonts'
 
 export default function ({ setStatus }) {
   const router = useRouter()
 
-  function handleCopyClick() {
+  function handleURLCopyClick() {
     const id = router.query.slag
     const url = location.origin + '/' + id
     navigator.clipboard.writeText(url)
   }
 
-  return (
-    <div className={$cn(css.Header, inter.className)}>
-      <Wrapper>
-        <div className={css.header}>
-          <div className={css.logo}>Clip</div>
+  function handleTextCopyClick() {
+    const textarea = document.getElementById(
+      'text-container'
+    ) as HTMLTextAreaElement
+    const text = textarea.value
+    navigator.clipboard.writeText(text)
+  }
 
-          <div className={css.controls}>
+  return (
+    <header className={css.header}>
+      <Wrapper>
+        <nav className={css.nav}>
+          <h1 className={css.navLogo}>Mini Crypt</h1>
+
+          <ul className={css.navList}>
             {router.route === '/[slag]' && (
-              <div className={css.button}>
-                <button onClick={handleCopyClick}>Copy Link</button>
-              </div>
+              <>
+                <button onClick={handleURLCopyClick}>Copy Link</button>
+                <button onClick={handleTextCopyClick}>Copy Text</button>
+              </>
             )}
 
-            <div className={css.button}>
-              {router.route === '/' ? (
-                <SavePaste setStatus={setStatus} />
-              ) : (
-                <button onClick={() => router.push('/')}>New</button>
-              )}
-            </div>
-          </div>
-        </div>
+            {router.route === '/' ? (
+              <SavePaste setStatus={setStatus} />
+            ) : (
+              <button onClick={() => router.push('/')}>New</button>
+            )}
+          </ul>
+        </nav>
       </Wrapper>
-    </div>
+    </header>
   )
 }

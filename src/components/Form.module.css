@@ -9,13 +9,15 @@
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
 
-  background-color: #00000010;
+  background-color: var(--clr-bg-dark);
   border: 0;
 
   outline: solid 0.2rem transparent;
   transition: 0.4s ease-in-out;
+  
+  font-family: var(--font-fira-code);
 }
 
 .textarea:focus {
-  outline-color: black;
+  outline-color: var(--clr-blue);
 }

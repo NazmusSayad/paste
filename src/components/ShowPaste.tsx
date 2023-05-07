@@ -11,9 +11,13 @@ const ShowPaste = ({ paste }) => {
 
       <div className={css.container}>
         <Wrapper>
-          {paste?.text?.split('\n').map((part, i) => (
-            <p key={i}>{part}</p>
-          ))}
+          <textarea
+            disabled
+            id="text-container"
+            value={paste.text}
+            className={css.textWrapper}
+            rows={[...paste.text].filter((a) => a === '\n').length + 1}
+          />
         </Wrapper>
       </div>
     </>

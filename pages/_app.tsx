@@ -20,14 +20,23 @@ import 'css-reset-plus'
 import '../src/styles/globals.css'
 import Header from '../src/components/Header'
 import useStatus from '../src/hooks/useStatus'
-import { firaCode } from '../src/fonts'
+import { firaCode, inter } from '../src/fonts'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const status = useStatus()
 
   return (
     <>
-      <div className={$cn(css.container, firaCode.className)}>
+      <style jsx global>
+        {`
+          :root {
+            --font-inter: ${inter.style.fontFamily};
+            --font-fira-code: ${firaCode.style.fontFamily};
+          }
+        `}
+      </style>
+
+      <div className={$cn(css.container, inter.className)}>
         <Header setStatus={status.setStatus} />
 
         <Component {...pageProps} />
