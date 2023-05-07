@@ -24,7 +24,7 @@ export default function ({ setStatus }) {
     <header className={css.header}>
       <Wrapper>
         <nav className={css.nav}>
-          <h1 className={css.navLogo}>Mini Crypt</h1>
+          <h1 className={css.navLogo}>Pastei</h1>
 
           <ul className={css.navList}>
             {router.route === '/[slag]' && (
