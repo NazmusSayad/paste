@@ -1,4 +1,4 @@
-const alphabet = 'qCrveYyN8PwU3ouAZERhn597iD6LxBGpmzb2fQS4cdJtKsaHkXMgjVWFT1'
+const alphabet = 'qCrveYyN8PwU3ouAZERhn5d97iD6LxBGpmzb2fQS4cJtKsaHkXMgjVWFT1'
 const base = alphabet.length
 
 export default {
